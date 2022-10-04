@@ -1,0 +1,7 @@
+# Static methods
+https://www.geeksforgeeks.org/static-methods-vs-instance-methods-java/
+Static method(s) are associated with the class in which they reside i.e. they are called without creating an instance of the class i.e ClassName.methodName(args).
+
+# Nested classes
+https://www.geeksforgeeks.org/nested-classes-java/
+
