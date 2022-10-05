@@ -5,6 +5,7 @@ import POM.POM;
 import core.Utilities;
 import core.WebActions;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
@@ -24,7 +25,7 @@ public class WebTests {
         driver = driverUtils.getDriver();
 
         driverUtils.openBrowser("https://about.gitlab.com/");
-        
+        Assert.assertTrue(true);
         WebActions.click(driver, aboutGitlab.whygitlab);
         WebActions.click(driver, aboutGitlab.whyPremium);
 

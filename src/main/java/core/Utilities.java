@@ -14,6 +14,9 @@ public class Utilities {
 
     public static Properties globalProperties;
 
+    /**
+     * Config object representing properties used during test.
+     */
     public enum Configs {
         BROWSER("browser"),
         ENV("env"),
@@ -28,11 +31,10 @@ public class Utilities {
             return key;
         }
     }
-//    public static void main(String args[]){
-//        System.out.println(Configs.BROWSER.key);
-//    }
 
-
+    /**
+     * Method to load properties defined in properties file. Properties will be loaded to globlal variable globalProperties.
+     */
     public static void loadTestProperties() {
         try {
 
@@ -60,6 +62,13 @@ public class Utilities {
         }
     }
 
+    /**
+     * Method to find desired element by its locator.
+     * @param driver driver object
+     * @param locator locator defined in the Page Object Model (POM) class
+     * @return  located element's object
+     *          null when element is not located
+     */
     public static WebElement findElementByLocator (WebDriver driver, By locator) {
         try {
             return driver.findElement(locator);
@@ -70,6 +79,13 @@ public class Utilities {
         }
     }
 
+    /**
+     * Function to print the step being executed. Print could be turned  ON or OFF depending on property value
+     * LOGTESTSTEPS defined in Config.
+     * @param stepInfo Executed step information
+     * @see Configs Config property defined according depending on testProperties.properties file
+     * @see WebActions each Selenium action contains the String of the step being executed(action, object, input, output)
+     */
     public static void logTestSteps(String stepInfo){
         if (Configs.LOGTESTSTEPS.key.equals("true")){
             System.out.println(stepInfo);

@@ -25,6 +25,9 @@ public class DriverUtils {
 
     }
 
+    /**
+    * Method to create the browser driver according to the driver name specified in the Utilities.Configs property
+    */
     public void createBrowserDriver(){
 
 //        System.out.println("browser is " + globalProperties.getProperty("browser"));
@@ -38,10 +41,18 @@ public class DriverUtils {
         }
     }
 
+    /**
+     * Getter of the driver object.
+     * @return driver object
+     */
     public WebDriver getDriver(){
         return driver;
     }
 
+    /**
+     * Method to open the browser on the indicated URL
+     * @param url URL of the starting point
+     */
     public void openBrowser (String url){
         driver.get(url);
     }
